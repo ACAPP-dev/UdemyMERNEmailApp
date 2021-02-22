@@ -1,4 +1,18 @@
+#brand-img {
+  margin-left: 7px;
+}
+
 #google-login-img {
-  object-fit: contain;
-  height: 50px;
+  /* object-fit: contain; */
+  height: 40px;
+}
+
+#google-img-container {
+  display: flex;
+  align-items: center;
+  height: 64px;
+}
+
+#landing {
+  text-align: center;
 }
