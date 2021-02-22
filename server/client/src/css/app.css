@@ -2,6 +2,10 @@
   margin-left: 7px;
 }
 
+#nav-mobile li {
+  margin-right: 5px;
+}
+
 #google-login-img {
   /* object-fit: contain; */
   height: 40px;

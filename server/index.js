@@ -5,8 +5,11 @@ const cookieSession = require("cookie-session");
 const passport = require("passport");
 require("./models/user");
 require("./services/passport");
+const bodyParser = require("body-parser");
 
 const app = express();
+
+app.use(bodyParser.json());
 
 app.use(
   cookieSession({
@@ -19,6 +22,7 @@ app.use(passport.initialize());
 app.use(passport.session());
 
 require("./routes/authRoutes")(app);
+require("./routes/billingRoutes")(app);
 
 app.get("/", (req, res) => {
   res.send({ hi: "there" });

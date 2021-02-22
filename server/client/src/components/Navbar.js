@@ -2,6 +2,7 @@ import React from "react";
 import { connect } from "react-redux";
 import { Link } from "react-router-dom";
 import google from "../images/sign-in-button.png";
+import Payments from "./Payments";
 
 class Navbar extends React.Component {
   renderContent() {
@@ -21,14 +22,17 @@ class Navbar extends React.Component {
           </li>
         );
       default:
-        return (
-          <>
-            <li>Welcome {this.props.auth.name}</li>
-            <li>
-              <a href="/users/logout">Logout</a>
-            </li>
-          </>
-        );
+        return [
+          <li key="1">
+            <Payments />
+          </li>,
+          <li key="4">Credits: {this.props.auth.credits}</li>,
+          <li key="2">Welcome {this.props.auth.name}</li>,
+
+          <li key="3">
+            <a href="/users/logout">Logout</a>
+          </li>,
+        ];
     }
   }
 
@@ -45,7 +49,7 @@ class Navbar extends React.Component {
             Surveys-R-Us
           </Link>
 
-          <ul id="nav-mobile" className="right">
+          <ul id="nav-mobile" className="right hide-on-med-and-down">
             {this.renderContent()}
           </ul>
         </div>
