@@ -10,6 +10,10 @@ import { Provider } from "react-redux";
 import App from "./components/App";
 import reducers from "./reducers";
 
+// temp code to test email functionality on server
+import axios from "axios";
+window.axios = axios;
+
 const store = createStore(reducers, {}, applyMiddleware(reduxThunk));
 
 ReactDOM.render(
