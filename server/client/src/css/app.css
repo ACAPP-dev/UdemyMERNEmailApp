@@ -20,3 +20,8 @@
 #landing {
   text-align: center;
 }
+
+#dashboard {
+  width: 85%;
+  margin: auto;
+}

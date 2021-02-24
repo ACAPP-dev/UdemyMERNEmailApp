@@ -4,9 +4,8 @@ import * as actions from "../actions";
 import { BrowserRouter as Router, Route } from "react-router-dom";
 import Navbar from "./Navbar";
 import Landing from "./Landing";
-
-const Dashboard = () => <h2>Dashboard</h2>;
-const SurveyNew = () => <h2>SurveyNew</h2>;
+import Dashboard from "./Dashboard";
+import SurveyNew from "./surveys/SurveyNew";
 
 class App extends React.Component {
   componentDidMount() {
@@ -17,8 +16,8 @@ class App extends React.Component {
     return (
       <div>
         <Router>
-          <div>
-            <Navbar />
+          <Navbar />
+          <div className="container">
             <Route exact path="/" component={Landing} />
             <Route exact path="/surveys" component={Dashboard} />
             <Route path="/surveys/new" component={SurveyNew} />

@@ -7,10 +7,10 @@ module.exports = (survey) => {
           <p>Please answer the following questions:</p>
           <p>${survey.body}</p>
           <div>
-            <a href="${process.env.REDIRECT_DOMAIN}/surveys/thanks">Yes</a>
+            <a href="${process.env.REDIRECT_DOMAIN}/api/surveys/thanks">Yes</a>
           </div>
           <div>
-            <a href="${process.env.REDIRECT_DOMAIN}/surveys/thanks">No</a>
+            <a href="${process.env.REDIRECT_DOMAIN}/api/surveys/thanks">No</a>
           </div>
         </div>
       </body>
