@@ -9,9 +9,9 @@ class SurveyList extends React.Component {
   }
 
   compareTitle(a, b) {
-    if (a < b) {
+    if (a.toLowerCase() < b.toLowerCase()) {
       return -1;
-    } else if (a > b) {
+    } else if (a.toLowerCase() > b.toLowerCase()) {
       return 1;
     } else {
       return 0;
@@ -56,7 +56,7 @@ class SurveyList extends React.Component {
           className="card blue-grey lighten-1"
         >
           <div className="card-content white-text">
-            <span className="card-title">Survey: {survey.title}</span>
+            <span className="card-title">{survey.title}</span>
             <p>Survey Question: {survey.body}</p>
             <p className="left">
               Last Response On:{" "}

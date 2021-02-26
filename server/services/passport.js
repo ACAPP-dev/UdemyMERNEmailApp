@@ -30,7 +30,7 @@ passport.use(
       User.findOne({ googleId: profile.id }).then((existingUser) => {
         if (existingUser) {
           // we already have a user - future functionality
-          console.log(existingUser);
+
           done(null, existingUser);
         } else {
           new User({

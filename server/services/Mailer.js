@@ -2,10 +2,10 @@ const sendGrid = require("sendgrid");
 const helper = sendGrid.mail;
 
 class Mailer extends helper.Mail {
-  constructor({ subject, recipients }, content) {
+  constructor({ subject, from, recipients }, content) {
     super();
     this.sgMail = sendGrid(process.env.SENDGRID_KEY);
-    this.from_email = new helper.Email("acapp909@gmail.com");
+    this.from_email = new helper.Email(from);
     this.subject = subject;
     this.body = new helper.Content("text/html", content);
     this.recipients = this.formatAddresses(recipients);
