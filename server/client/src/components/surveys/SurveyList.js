@@ -8,8 +8,47 @@ class SurveyList extends React.Component {
     this.props.fetchSurveys();
   }
 
+  compareTitle(a, b) {
+    if (a < b) {
+      return -1;
+    } else if (a > b) {
+      return 1;
+    } else {
+      return 0;
+    }
+  }
+
+  compareDates(a, b) {
+    if (a < b) {
+      return 1;
+    } else if (a > b) {
+      return -1;
+    } else {
+      return 0;
+    }
+  }
+
   renderSurveys() {
-    return this.props.surveys.reverse().map((survey) => {
+    let orderedSurveys = [];
+
+    if (this.props.sortVar === "title") {
+      orderedSurveys = this.props.surveys.sort((survey1, survey2) => {
+        return this.compareTitle(
+          survey1[this.props.sortVar],
+          survey2[this.props.sortVar]
+        );
+      });
+    } else if (this.props.sortVar) {
+      orderedSurveys = this.props.surveys.sort((survey1, survey2) => {
+        return this.compareDates(
+          survey1[this.props.sortVar],
+          survey2[this.props.sortVar]
+        );
+      });
+    } else {
+      orderedSurveys = this.props.surveys.reverse();
+    }
+    return orderedSurveys.map((survey) => {
       return (
         <div
           key={survey._id}
